@@ -1,3 +1,10 @@
+# Check if the script is running as administrator
+if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
+    # Relaunch the script as administrator
+    Start-Process powershell.exe -Verb RunAs -ArgumentList ("-File", $MyInvocation.MyCommand.Path)
+    Exit
+}
+
 # Set the path to your Git repository
 $repoPath = "E:\AutoPush\"
 
