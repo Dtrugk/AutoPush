@@ -18,7 +18,7 @@ AutoGitUpdater is a PowerShell script that automates the process of updating a G
 
 1. Clone or download the AutoGitUpdater repository `git clone https://github.com/Dtrugk/AutoPush.git`.
 2. Customize the `Script.ps1` file to fit your requirements.
-3. Run `ScheduleTask.ps1` with administrative privileges to create the scheduled task.
+3. Run `ScheduleTask.ps1` with administrative privileges to create the scheduled task and add to start-up folder.
 4. The script will update the README file at the specified times and push the changes automatically.
 
 ## :bookmark_tabs: Contributing

@@ -37,3 +37,11 @@ $action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-File $sc
 
 # Register the scheduled task with all triggers
 Register-ScheduledTask -TaskName $taskName -Trigger $triggers -Action $action -RunLevel Highest -Force
+
+# Add script to run at startup by creating a shortcut in the Startup folder
+$shortcutPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\AutoGitUpdater.lnk"
+$shell = New-Object -ComObject WScript.Shell
+$shortcut = $shell.CreateShortcut($shortcutPath)
+$shortcut.TargetPath = "powershell.exe"
+$shortcut.Arguments = "-ExecutionPolicy Bypass -File `"$scriptPath`""
+$shortcut.Save()
