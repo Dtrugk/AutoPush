@@ -19,7 +19,7 @@ $taskName = "GitAutoUpdate"
 
 # Define the trigger settings (e.g., run daily at specified times)
 # Define an array of trigger times
-$triggerTimes = "8:00 AM", "6:10 PM", "4:00 PM"
+$triggerTimes = "8:00 AM", "6:30 PM", "4:00 PM"
 
 # Initialize an empty array to store trigger objects
 $triggers = @()
