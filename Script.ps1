@@ -10,7 +10,7 @@ $content = "### Daily Update" + "`r`n" +
            "This is an automated update generated on $timestamp."
 
 # Write content to README.md file
-$content | Out-File -FilePath "README.md" -Encoding utf8
+$content | Out-File -FilePath ".\DailyUpdate.txt" -Encoding utf8 -Append
 
 # Stage changes
 git add .
